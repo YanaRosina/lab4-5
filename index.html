@@ -52,11 +52,9 @@ xhr.send();
 }
 function getext()
 {
-  const QUOTE_URL = "https://andruxnet-random-famous-quotes.p.mashape.com";
-  const QUOTE_API_KEY = "CdbBmWOrBfmshc7t9INffynYmXwNp1JFGbpjsny0dUKurJRhrP";
     var xhr = new XMLHttpRequest();
     xhr.open("GET", QUOTE_URL);
-    xhr.setRequestHeader("X-Mashape-Key", QUOTE_API_KEY);
+    xhr.setRequestHeader("https://andruxnet-random-famous-quotes.p.mashape.com", "WFaXrbqUjnmsh7YL9V0PO5dppz4zp1eCLTtjsnRTNSXTcnmPON");
     xhr.onload = function ()
     {
         var quote = JSON.parse(this.responseText);
