@@ -53,8 +53,8 @@ xhr.send();
 function getext()
 {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", QUOTE_URL);
-    xhr.setRequestHeader("https://andruxnet-random-famous-quotes.p.mashape.com", "WFaXrbqUjnmsh7YL9V0PO5dppz4zp1eCLTtjsnRTNSXTcnmPON");
+    xhr.open("GET", "https://andruxnet-random-famous-quotes.p.mashape.com");
+    xhr.setRequestHeader("X-Mashape-Key", "WFaXrbqUjnmsh7YL9V0PO5dppz4zp1eCLTtjsnRTNSXTcnmPON");
     xhr.onload = function ()
     {
         var quote = JSON.parse(this.responseText);
