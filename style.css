@@ -2,39 +2,39 @@
 /* CSS Document */
 .click
 {
-color: white;
-background-color: black;
-width: 150px;
-padding: 10px;
+    color: white;
+    background-color: black;
+    width: 150px;
+    padding: 10px;
 }
 .center
 {
-  padding: 10px;
-  width: 60%;
-  height: auto;
-  margin-left: 20%;
-  text-align: center;
+    padding: 10px;
+    width: 60%;
+    height: auto;
+    margin-left: 20%;
+    text-align: center;
 }
 .navbar
 {
-  background-color: black;
-  color: white;
-  margin-left:-8px;
-  margin-top: -8px;
-  margin-right: -8px;
-  padding: 10px;
-  text-align: left;
-  font-family: sans-serif;
-  height: auto;
-  border: 0;
+    background-color: black;
+    color: white;
+    margin-left:-8px;
+    margin-top: -8px;
+    margin-right: -8px;
+    padding: 10px;
+    text-align: left;
+    font-family: sans-serif;
+    height: auto;
+    border: 0;
 }
 .mypic
 {
-  width: 100%;
-  background-color: black;
+    width: 100%;
+    background-color: black;
 }
 .image
 {
-  width: 100%;
-  margin-bottom: 20px;
+    width: 100%;
+    margin-bottom: 20px;
 }

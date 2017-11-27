@@ -1,101 +1,28 @@
 <html lang="en">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <head>
- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
- <meta name="viewport" content="width=device-width, initial-scale=1"/>
- <title>LAB 4 and 5</title>
- <link href="style.css" type="text/css" rel="stylesheet"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>LAB 4 and 5</title>
+    <link href="style.css" type="text/css" rel="stylesheet"/>
 </head>
 <body >
 
 <div class="navbar">
-Лабораторная работа № 4 и 5.
+    Лабораторная работа № 4 и 5.
 </div>
 <div class="center">
-  <div class="image">
-    <canvas class="mypic"   width="640" height="480" id="q2"></canvas>
-  </div>
+    <div class="image">
+        <canvas class="mypic"   width="640" height="480" id="q2"></canvas>
+    </div>
     <input type="button" value="GENERATE" class="click" onclick="GENERATE()">
-    <input type="button" value="DOWNLOAD" class="click" onclick="DOWNLOAD()">
+    <input type="button" value="DOWNLOAD" class="click" onclick="UPLOAD()">
+    <a id="url"></a>
+    <span class="col s12 badge" id="quote"></span>
+
+
 </div>
 
+<script src="script.js"></script>
 </body>
-<script type="text/javascript">
-function DOWNLOAD()
-{
-  alert('Еще нет, но скоро будет');
-}
-function GENERATE()
-{
-  getimg();
-
-}
-function getimg(){
-  var XHR = ("onload" in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
-  var xhr = new XHR();
-  xhr.open('GET', 'https://loremflickr.com/640/480', true);
-  xhr.onload = function()
-   {
-     var canvas = document.getElementById('q2'),
-     context = canvas.getContext('2d');
-     image = new Image();
-     image.src = this.responseURL;
-     image.onload = function()
-     {
-       context.drawImage(image, 0, 0);
-       getext();
-     }
-   }
-  xhr.onerror = function() {
-  alert( 'No connection' );
-}
-xhr.send();
-}
-function getext()
-{
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://andruxnet-random-famous-quotes.p.mashape.com");
-    xhr.setRequestHeader("X-Mashape-Key", "WFaXrbqUjnmsh7YL9V0PO5dppz4zp1eCLTtjsnRTNSXTcnmPON");
-    xhr.onload = function ()
-    {
-        var quote = JSON.parse(this.responseText);
-        var canvas = document.getElementById("q2");
-        var context = canvas.getContext("2d");
-        var maxWidth = 400;
-        var lineHeight = 25;
-        var marginLeft = 20;
-        var marginTop = 40;
-        context.font = "16pt Calibri";
-        context.fillStyle = "#fff";
-        wrapText(context, quote.quote, marginLeft, marginTop, maxWidth, lineHeight);
-    }
-    xhr.send();
-}
-
-
-function wrapText(context, text, marginLeft, marginTop, maxWidth, lineHeight)
-    {
-        var words = text.split(" ");
-        var countWords = words.length;
-        var line = "";
-        for (var n = 0; n < countWords; n++) {
-            var testLine = line + words[n] + " ";
-            var testWidth = context.measureText(testLine).width;
-            if (testWidth > maxWidth) {
-                context.fillText(line, marginLeft, marginTop);
-                line = words[n] + " ";
-                marginTop += lineHeight;
-            }
-            else {
-                line = testLine;
-            }
-        }
-        context.fillText(line, marginLeft, marginTop);
-    }
-
-
-
-
-
-
-</script>
 </html>
